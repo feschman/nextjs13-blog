@@ -1,13 +1,10 @@
+import CTACard from "@/components/elements/cta-card";
 import PaddingContainer from "@/components/layout/padding-container";
 import PostCard from "@/components/post/post-card";
-import Link from "next/link";
-import { DUMMY_POSTS } from "@/DUMMY_DATA";
 import PostList from "@/components/post/post-list";
-import CTACard from "@/components/elements/cta-card";
 import directus from "@/lib/directus";
-import { DiagnosticCategory } from "typescript";
-import { notFound } from "next/navigation";
 import { getDictionary } from "@/lib/getDictionary";
+import { notFound } from "next/navigation";
 
 export default async function Home({params}:{
   params:{

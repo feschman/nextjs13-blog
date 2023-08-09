@@ -72,21 +72,21 @@ export const generateMetadata = async ({
       description: post.description,
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/${lang}/${slug}`,
       siteName: post?.title,
-      images: [
-        {
-          url: "http://localhost:3000/opengraph-image.jpg",
-          width: 1102,
-          height: 688,
-        },
-      ],
+      // images: [
+      //   {
+      //     url: "http://localhost:3000/opengraph-image.jpg",
+      //     width: 1102,
+      //     height: 688,
+      //   },
+      // ],
       locale: lang,
       type: "website",
     },
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/$post`,
       languages: {
-        en: `${process.env.NEXT_PUBLIC_SITE_URL}/en/post/${slug}`,
-        de: `${process.env.NEXT_PUBLIC_SITE_URL}/de/post/${slug}`,
+        "en": `${process.env.NEXT_PUBLIC_SITE_URL}/en/post/${slug}`,
+        "de": `${process.env.NEXT_PUBLIC_SITE_URL}/de/post/${slug}`,
       },
     },
   };
