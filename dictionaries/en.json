@@ -1,0 +1,29 @@
+{
+  "navigation":{
+    "links":{
+      "cities":"Cities",
+      "experience":"Experience"
+    }
+  },
+    "buttons":{
+      "readmore":"Read More"
+
+    },
+    "ctaCard":{
+      "titel":"Explore the World width me!",
+      "description":"Explore the world width me! I'm travelling around the 🌎. I've visited most of the great cities of 🇺🇸 and currently I'm in travelling in 🇭🇺 Join me!",
+      "button":"Sign Up",
+      "placeholder":"write your email.",
+      "subscriberText1":"Join our",
+      "subscriberText2":"subscribers now"
+    },
+    "footer":{
+      "description":"A minimal and lovely blog which shares experiences and cities around the world!",
+      "rightText":"All rights Reserved | Copyright",
+      "creatorText":"Created width ❤️️ by",
+      "currentlyAtText":"Currently at "
+
+    }
+
+  }
+

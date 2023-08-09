@@ -1,0 +1,5 @@
+User-Agent:*
+Allow:/
+Disallowed: /private/
+
+Sitemap:https://acame.com/sitemap.xml

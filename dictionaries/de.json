@@ -1,0 +1,29 @@
+{
+  "navigation":{
+    "links":{
+      "cities":"Städte",
+      "experience":"Erfahrungen"
+    }
+  },
+    "buttons":{
+      "readmore":"weiter lesen"
+
+    },
+    "ctaCard":{
+      "titel":"Entdecke die Welt mit mir!",
+      "description":"entdecke die Welt mit mir! Ich reise um die 🌎. Ich habe die meisten großartigen Städte der 🇺🇸 besucht und der Zeit reise ich in der  🇪🇺 begleite mich",
+      "button":"Anmelden",
+      "placeholder":"schreibe deine Email.",
+      "subscriberText1":"Trete unserem",
+      "subscriberText2":"verteiler jetzt bei!"
+    },
+    "footer":{
+      "description":"Ein minimalistischer und schöner Reiseblog, der Erfahrungen und Städte auf der ganzen Welt teilt",
+      "rightText":"Alle Rechte vorbehalten | Urheberrecht",
+      "creatorText":"erstellt mit ❤️️ von",
+      "currentlyAtText":"Derzeit in "
+
+    }
+
+  }
+
