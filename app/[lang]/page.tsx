@@ -6,12 +6,15 @@ import directus from "@/lib/directus";
 import { getDictionary } from "@/lib/getDictionary";
 import { notFound } from "next/navigation";
 
-export default async function Home({params}:{
-  params:{
-    lang:string;
-  }
+export default async function Home({
+  params,
+}: {
+  params: {
+    lang: string;
+  };
 }) {
   const locale = params.lang;
+
   const getAllPosts = async () => {
     try {
       const posts = await directus.items("post").readByQuery({
@@ -22,52 +25,58 @@ export default async function Home({params}:{
           "author.last_name",
           "category.id",
           "category.title",
+          "category.translations.*",
           "translations.*",
-          "category.translations.*"
         ],
       });
-      // console.log(posts.data?.[0]);
-      if(locale === "en"){
+
+      if (locale === "en") {
         return posts.data;
-      }else{
-        const localisedPosts = posts.data?.map((post)=>{
-          return{
+      } else {
+        const localisedPosts = posts.data?.map((post) => {
+          return {
             ...post,
-            title:post.translations[0].title,
-            description:post.translations[0].description,
-            body:post.translations[0].body,
-            category:{
+            title: post.translations[0].title,
+            description: post.translations[0].description,
+            body: post.translations[0].body,
+            category: {
               ...post.category,
-              title:post.category.translations[0].title
-            }
-          }
+              title: post.category.translations[0].title,
+            },
+          };
         });
         return localisedPosts;
       }
 
+      /* console.log(posts.data?.[0]); */
     } catch (error) {
       console.log(error);
       throw new Error("Error fetching posts");
     }
   };
-  const posts =await getAllPosts();
-  //console.log(posts)
-  if(!posts){
+
+  const posts = await getAllPosts();
+
+  if (!posts) {
     notFound();
   }
-  const dictionary = await getDictionary(locale)
+
+  /* Get Dictionary */
+  const dictionary = await getDictionary(locale);
 
   return (
     <PaddingContainer>
-      <main className="h-auto space-y-10">
+      <main className="space-y-10">
         <PostCard locale={locale} post={posts[0]} />
-        <PostList locale={locale}
+        <PostList
+          locale={locale}
           posts={posts.filter((_post, index) => index > 0 && index < 3)}
         />
-        {/*---- @ts-expect-error  Async Server Component */}
+        {/* ---@ts-expect-error Async Server Component */}
         <CTACard dictionary={dictionary} />
         <PostCard locale={locale} reverse post={posts[3]} />
-        <PostList locale={locale}
+        <PostList
+          locale={locale}
           posts={posts.filter((_post, index) => index > 3 && index < 6)}
         />
       </main>
